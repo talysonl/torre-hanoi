@@ -126,12 +126,17 @@ document.addEventListener('DOMContentLoaded', function() {
         gameStarted = true;
         updateUI();
         
-        // Start timer
+        // Calculate total animation time: staggered delay for all discs + animation duration
+        const totalAnimationTime = (discsCount - 1) * 150 + 500;
+        
+        // Start timer only after all disc animations are complete
         clearInterval(timerInterval);
-        timerInterval = setInterval(() => {
-            timer++;
-            updateUI();
-        }, 1000);
+        setTimeout(() => {
+            timerInterval = setInterval(() => {
+                timer++;
+                updateUI();
+            }, 1000);
+        }, totalAnimationTime);
         
         // Add event listeners to towers
         setupTowerEvents();
