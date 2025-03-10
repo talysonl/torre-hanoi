@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torre de Hanoi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div id="initial-screen" class="screen active">
+        <h1>Torre de Hanoi</h1>
+        <div class="difficulty-selection">
+            <h2>Selecione a Dificuldade</h2>
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn" data-discs="3">Fácil (3 discos)</button>
+                <button class="difficulty-btn" data-discs="4">Médio (4 discos)</button>
+                <button class="difficulty-btn" data-discs="5">Difícil (5 discos)</button>
+            </div>
+        </div>
+        <button id="start-game" class="btn">Iniciar Jogo</button>
+    </div>
+
+    <!-- Tela do Jogo -->
+    <div id="game-screen" class="screen">
+        <div class="game-info">
+            <div class="info-item">
+                <span class="info-label">Tempo:</span>
+                <span id="timer">00:00</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Movimentos:</span>
+                <span id="moves">0</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Pontuação:</span>
+                <span id="score">0</span>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <div class="towers-container">
+                <div class="tower" id="tower-1" data-tower="1">
+                    <div class="tower-base"></div>
+                </div>
+                <div class="tower" id="tower-2" data-tower="2">
+                    <div class="tower-base"></div>
+                </div>
+                <div class="tower" id="tower-3" data-tower="3">
+                    <div class="tower-base"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="reset-game" class="btn">Reiniciar</button>
+    </div>
+
+    <!-- Tela de Resultados -->
+    <div id="results-screen" class="screen">
+        <h1>Resultados</h1>
+        <div class="results-container">
+            <div class="result-item">
+                <span class="result-label">Dificuldade:</span>
+                <span id="result-difficulty"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Tempo Total:</span>
+                <span id="result-time"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Movimentos:</span>
+                <span id="result-moves"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Pontuação Final:</span>
+                <span id="result-score"></span>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button id="play-again" class="btn">Jogar Novamente</button>
+            <button id="back-to-menu" class="btn">Voltar ao Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
